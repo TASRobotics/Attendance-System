@@ -1,6 +1,7 @@
 import PySimpleGUI as sg # pip install pysimplegui
 import csv
 import datetime as dt # pip install datetime
+import pandas as pd # pip install pandas
 
 # setup for the date and time
 currentDate = dt.date.today()
