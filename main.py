@@ -11,7 +11,7 @@ sg.theme('DarkAmber')   #TODO: Change color theme
 layout = [  [sg.Text('Welcome To Raid One/Zero')],
             [sg.Text('TAS ID:'), sg.InputText()],
             [sg.Text('Name:'), sg.InputText()],
-            [sg.Text('Subteam:'), sg.InputText()],
+            [sg.Text('Subteam:'), sg.Combo(['Programming', 'Mechanical', 'Electrical'])],
             [sg.Button('Ok'), sg.Button('Cancel')] ]
 
 # Create the Window
@@ -47,7 +47,15 @@ while True:
     with open(filename, 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
         writer.writerows(students)
-#TODO: If already entered give task if not entered ask for name and subteam
+    #TODO: If already entered give task if not entered ask for name and subteam
+
+    # gives tasks based on what they choose
+    if values[2] == 'Programming':
+        sg.popup('programming task')
+    elif values[2] == 'Mechanical':
+        sg.popup('Mech task')
+    elif values[2] == 'Electrical':
+        sg.popup('electrical task')
 
 window.close()
 
