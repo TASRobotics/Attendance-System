@@ -6,9 +6,6 @@ import pandas as pd # pip install pandas
 # setup for the date and time
 currentDate = dt.date.today()
 
-# the fields for the csv files
-fields = ['id', 'name', 'subteam', 'timeAdded']
-
 sg.theme('DarkAmber')   #TODO: Change color theme
 # All the stuff inside your window.
 layout = [  [sg.Text('Welcome To Raid One/Zero')],
@@ -38,17 +35,16 @@ while True:
     elif currentDate.month == 5:
         filename = 'studentsMay.csv'
 
-    # the student id number
+    # the student values based on what they type
     students = [
     {'id': values[0], 'name': values[1], 'subteam': values[2], 'timeAdded': currentDate}
 ]
-    
-    with open(filename, 'w') as csvfile:
+    # The fields for the csv files
+    fields = ['id', 'name', 'subteam', 'timeAdded']
 
+    with open(filename, 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
-
-        writer.writeheader()
-
         writer.writerows(students)
+
 window.close()
 
