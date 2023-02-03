@@ -6,8 +6,8 @@ import pandas as pd # pip install pandas
 # setup for the date and time
 currentDate = dt.date.today()
 
-sg.theme('DarkAmber')   #TODO: Change color theme
 # All the stuff inside your window.
+sg.theme('DarkAmber')   #TODO: Change color theme
 layout = [  [sg.Text('Welcome To Raid One/Zero')],
             [sg.Text('TAS ID:'), sg.InputText()],
             [sg.Text('Name:'), sg.InputText()],
@@ -18,11 +18,12 @@ layout = [  [sg.Text('Welcome To Raid One/Zero')],
 window = sg.Window('Attendance System', layout)
 
 while True:
+
+    # read the values in the window
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
         break
-    #TODO: If already entered give task if not entered ask for name and subteam
-
+    
     # selects the right file for what month it is (makes it easier to check the attendance)
     if currentDate.month == 1:
         filename = "studentsJan.csv"
@@ -42,9 +43,11 @@ while True:
     # The fields for the csv files
     fields = ['id', 'name', 'subteam', 'timeAdded']
 
+    # appends it onto the csv file
     with open(filename, 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
         writer.writerows(students)
+#TODO: If already entered give task if not entered ask for name and subteam
 
 window.close()
 
