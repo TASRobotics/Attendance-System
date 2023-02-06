@@ -11,7 +11,7 @@ sg.theme('DarkAmber')   #TODO: Change color theme
 layout = [  [sg.Text('Welcome To Raid One/Zero')],
             [sg.Text('TAS ID:'), sg.InputText()],
             [sg.Text('Name:'), sg.InputText()],
-            [sg.Text('Subteam:'), sg.Combo(['Programming', 'Mechanical', 'Electrical'])],
+            [sg.Text('Subteam:'), sg.Combo(['Programming', 'Mechanical', 'Electrical', 'Design', 'Statistics', 'Logistics'])],
             [sg.Button('Ok'), sg.Button('Cancel')] ]
 
 # Create the Window
@@ -50,12 +50,19 @@ while True:
     #TODO: If already entered give task if not entered ask for name and subteam
 
     # gives tasks based on what they choose
+    #TODO: Give a task
     if values[2] == 'Programming':
         sg.popup('programming task')
     elif values[2] == 'Mechanical':
         sg.popup('Mech task')
     elif values[2] == 'Electrical':
         sg.popup('electrical task')
+    elif values[2] == 'Design':
+        sg.popup('design task')
+    elif values[2] == 'Statistics':
+        sg.popup('Stats task')
+    elif values[2] == 'Logistics':
+        sg.popup('Logistics task')
 
 window.close()
 
