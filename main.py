@@ -59,7 +59,8 @@ while True:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
         writer.writerows(students)
     #TODO: If already entered give task if not entered ask for name and subteam
-
+    #* Try: search for id and if it finds it add it
+    #* else: ask for more info and add it
     # gives tasks based on what they choose
     #TODO: Give a task
     if values[3] == 'Programming' and values[2]:
