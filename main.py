@@ -4,7 +4,7 @@ import datetime as dt # pip install datetime
 import pandas as pd # pip install pandas
 
 # setup for the date and time
-currentDate = dt.date.today()
+currentTime = dt.date.now()
 
 # All the stuff inside your window.
 sg.theme('DarkAmber')   #TODO: Change color theme
@@ -49,7 +49,7 @@ while True:
 
     # the student values based on what they type
     students = [
-    {'id': values[0], 'name': values[1], 'team': values[2], 'subteam': values[3], 'timeAdded': currentDate}
+    {'id': values[0], 'name': values[1], 'team': values[2], 'subteam': values[3], 'timeAdded': currentTime}
 ]
     # The fields for the csv files
     fields = ['id', 'name', 'subteam', 'team', 'timeAdded']
