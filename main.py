@@ -16,7 +16,8 @@ layout = [  [sg.Text('Welcome To Raid One/Zero')],
             [sg.Button('Ok'), sg.Button('Cancel')] ]
 
 # Create the Window
-window = sg.Window('Attendance System', layout)
+window = sg.Window('Attendance System', layout, finalize = True)
+window.Maximize()
 
 while True:
 
