@@ -4,7 +4,7 @@ import datetime as dt # pip install datetime
 import pandas as pd # pip install pandas
 
 # setup for the date and time
-currentTime = dt.date.now()
+currentTime = dt.datetime.now().replace(second = 0, microsecond = 0)
 
 # All the stuff inside your window.
 sg.theme('DarkAmber')   #TODO: Change color theme
@@ -26,25 +26,25 @@ while True:
         break
     
     # selects the right file for what month it is (makes it easier to check the attendance)
-    if currentDate.month == 1 and values[2] == 'Raid One':
+    if currentTime.month == 1 and values[2] == 'Raid One':
         filename = "oStudentsJan.csv"
-    elif currentDate.month == 1 and values[2] == 'Raid Zero':
+    elif currentTime.month == 1 and values[2] == 'Raid Zero':
         filename = 'zStudentsJan.csv'
-    elif currentDate.month == 2 and values[2] == 'Raid One':
+    elif currentTime.month == 2 and values[2] == 'Raid One':
         filename = "oStudentsFeb.csv"
-    elif currentDate.month == 2 and values[2] == 'Raid Zero':
+    elif currentTime.month == 2 and values[2] == 'Raid Zero':
         filename = 'zStudentsFeb.csv'
-    elif currentDate.month == 3 and values[2] == 'Raid One':
+    elif currentTime.month == 3 and values[2] == 'Raid One':
         filename = 'oStudentsMar.csv'
-    elif currentDate.month == 3 and values [2]== 'Raid Zero':
+    elif currentTime.month == 3 and values [2]== 'Raid Zero':
         filename = 'zStudentsMar.csv'
-    elif currentDate.month == 4 and values [2] == 'Raid One':
+    elif currentTime.month == 4 and values [2] == 'Raid One':
         filename = 'oStudentsApril.csv'
-    elif currentDate.month == 4 and values[2] == 'Raid Zero':
+    elif currentTime.month == 4 and values[2] == 'Raid Zero':
         filename = 'zStudentsApril.csv'
-    elif currentDate.month == 5 and values[2] == 'Raid One':
+    elif currentTime.month == 5 and values[2] == 'Raid One':
         filename = 'oStudentsMay.csv'
-    elif currentDate.month == 5 and values[2] == 'Raid Zero':
+    elif currentTime.month == 5 and values[2] == 'Raid Zero':
         filename = 'zStudentsMay.csv'
 
     # the student values based on what they type
@@ -63,17 +63,17 @@ while True:
     #* else: ask for more info and add it
     # gives tasks based on what they choose
     #TODO: Give a task
-    if values[3] == 'Programming' and values[2]:
-        sg.popup('programming task')
-    elif values[3] == 'Mechanical':
-        sg.popup('Mech task')
-    elif values[3] == 'Electrical':
-        sg.popup('electrical task')
-    elif values[3] == 'Design':
-        sg.popup('design task')
-    elif values[3] == 'Statistics':
-        sg.popup('Stats task')
-    elif values[3] == 'Logistics':
-        sg.popup('Logistics task')
+#    if values[3] == 'Programming' and values[2]:
+#        sg.popup('programming task')
+#    elif values[3] == 'Mechanical':
+#        sg.popup('Mech task')
+#    elif values[3] == 'Electrical':
+#        sg.popup('electrical task')
+#    elif values[3] == 'Design':
+#        sg.popup('design task')
+#    elif values[3] == 'Statistics':
+#        sg.popup('Stats task')
+#    elif values[3] == 'Logistics':
+#        sg.popup('Logistics task')
 
 window.close()
