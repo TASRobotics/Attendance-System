@@ -27,10 +27,33 @@ while True:
         break
     
     # selects the right file for what month it is (makes it easier to check the attendance)
+<<<<<<< HEAD
     if values[2] == 'Raid One':
         oz = 'o'
     elif values[2] == 'Raid Zero':
         oz = 'z'
+=======
+    if currentTime.month == 1 and values[2] == 'Raid One':
+        filename = "oStudentsJan.csv"
+    elif currentTime.month == 1 and values[2] == 'Raid Zero':
+        filename = 'zStudentsJan.csv'
+    elif currentTime.month == 2 and values[2] == 'Raid One':
+        filename = "oStudentsFeb.csv"
+    elif currentTime.month == 2 and values[2] == 'Raid Zero':
+        filename = 'zStudentsFeb.csv'
+    elif currentTime.month == 3 and values[2] == 'Raid One':
+        filename = 'oStudentsMar.csv'
+    elif currentTime.month == 3 and values [2]== 'Raid Zero':
+        filename = 'zStudentsMar.csv'
+    elif currentTime.month == 4 and values [2] == 'Raid One':
+        filename = 'oStudentsApril.csv'
+    elif currentTime.month == 4 and values[2] == 'Raid Zero':
+        filename = 'zStudentsApril.csv'
+    elif currentTime.month == 5 and values[2] == 'Raid One':
+        filename = 'oStudentsMay.csv'
+    elif currentTime.month == 5 and values[2] == 'Raid Zero':
+        filename = 'zStudentsMay.csv'
+>>>>>>> parent of bf8f086 (remade the file naming system and made the file placement way more efficient)
 
     # the student values based on what they type
     students = [
@@ -43,8 +66,11 @@ while True:
     with open(f"{oz}{currentTime.month}.csv", 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
         writer.writerows(students)
+<<<<<<< HEAD
         print('it works!')
 
+=======
+>>>>>>> parent of bf8f086 (remade the file naming system and made the file placement way more efficient)
     #TODO: If already entered give task if not entered ask for name and subteam
     #* Try: search for id and if it finds it add it
     #* else: ask for more info and add it
