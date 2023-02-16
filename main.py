@@ -31,9 +31,6 @@ while True:
         oz = 'o'
     elif values[2] == 'Raid Zero':
         oz = 'z'
-    
-    filename = f'{oz}{currentTime.month}.csv'
-    print(filename)
 
     # the student values based on what they type
     students = [
@@ -43,9 +40,10 @@ while True:
     fields = ['id', 'name', 'subteam', 'team', 'timeAdded']
 
     # appends it onto the csv file
-    with open(filename, 'a') as csvfile:
+    with open(f"{oz}{currentTime.month}.csv", 'a') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames = fields)
         writer.writerows(students)
+        print('it works!')
 
     #TODO: If already entered give task if not entered ask for name and subteam
     #* Try: search for id and if it finds it add it
